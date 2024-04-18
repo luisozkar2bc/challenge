@@ -31,7 +31,7 @@ El proyecto Challenge utiliza Spring Boot para crear una aplicación con caracte
 > Inicio Rápido
  
 - Asegúrate de tener JDK 17 y Maven instalados en tu sistema.
-- Clona este repositorio: git clone https://github.com/luisozkar2/challenge.git
+- Clona este repositorio: git clone https://github.com/luisozkar2bc/challenge.git
 - Navega al directorio del proyecto: cd challenge
 - Compila y ejecuta el proyecto: mvn spring-boot:run
 - Abre tu navegador y visita: http://localhost:8080/challenge/
