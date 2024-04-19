@@ -12,11 +12,9 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
 
 public class TokenUtils {
-
 	private static final String ACCESS_TOKEN_SECRET = "f9oweufosf890234u5fansdh79ryidfh";
 	private static final Long ACCESS_TOKEN_VALIDATE_SECONDS = 2_592_000L;
 
-	public TokenUtils() {}
 	public static String createToken (String nombre, String email) {
 		var expirationTime = ACCESS_TOKEN_VALIDATE_SECONDS * 1_000;
 		Date expirationDate = new Date(System.currentTimeMillis() + expirationTime);
