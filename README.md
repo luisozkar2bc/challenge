@@ -39,6 +39,25 @@ El proyecto Challenge utiliza Spring Boot para crear una aplicación con caracte
 - Para el login obtener el token de: localhost:8080/challenge/login 
  con este json: { "email" : "luisozkar2@gmail.com", "password" : "medina" }
 
+> Inicio de la aplicación con Docker
+
+Si prefieres ejecutar la aplicación utilizando Docker, sigue estos pasos:
+
+- Desde la raíz del proyecto, construye la imagen Docker ejecutando el siguiente comando:
+
+   ```
+   docker build -t challenge-app .
+   
+Esto creará una imagen Docker llamada challenge-app utilizando el Dockerfile proporcionado en el proyecto.
+
+- Una vez que la imagen se haya construido con éxito, puedes iniciar un contenedor Docker con el siguiente comando:
+   ```
+  docker run -p 8080:8080 challenge-app
+  
+- Esto iniciará un contenedor Docker a partir de la imagen challenge-app y mapeará el puerto 8080 del contenedor al puerto 8080 de tu máquina local.
+¡Listo!
+
+
 > Documentación
 
 La documentación de la API se genera automáticamente utilizando Swagger. 
