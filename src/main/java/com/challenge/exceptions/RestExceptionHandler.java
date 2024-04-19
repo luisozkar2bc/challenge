@@ -29,4 +29,9 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
 		String bodyOfResponse = "Error no controlado: " + ex.getMessage();
 		return handleExceptionInternal(ex, bodyOfResponse, new HttpHeaders(), HttpStatus.CONFLICT, request);
 	}
+
+	@ExceptionHandler(value = { SuperHeroeDuplicadoException.class})
+	public ResponseEntity<Object> handleDuplicated(SuperHeroeDuplicadoException ex, WebRequest request) {
+		return handleExceptionInternal(ex, ex.getMessage(), new HttpHeaders(), HttpStatus.CONFLICT, request);
+	}
 }

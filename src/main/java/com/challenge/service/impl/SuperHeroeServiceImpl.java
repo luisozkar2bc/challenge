@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+import com.challenge.exceptions.SuperHeroeDuplicadoException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
@@ -51,6 +52,9 @@ public class SuperHeroeServiceImpl implements SuperHeroeService {
     @Override
     @CacheEvict(cacheNames="superheroes", allEntries=true)
     public SuperHeroeDTO createSuperHeroe(SuperHeroeDTO superHeroe) {
+        if (!findByNameContaining(superHeroe.getName()).isEmpty()) {
+            throw new SuperHeroeDuplicadoException("Ya existe un superhéroe con un nombre similar a " + superHeroe.getName());
+        }
         return mapper.toDto(superHeroeRepository.save(mapper.toEntity(superHeroe)));
     }
 
