@@ -38,6 +38,7 @@ El proyecto Challenge utiliza Spring Boot para crear una aplicación con caracte
 - Explora la API documentada en: http://localhost:8080/challenge/swagger-ui.html
 - Para el login obtener el token de: localhost:8080/challenge/login 
  con este json: { "email" : "luisozkar2@gmail.com", "password" : "medina" }
+- Copiar el token y colocarlo en el Authorization: Bearer
 
 > Inicio de la aplicación con Docker
 
